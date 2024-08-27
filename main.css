@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(60deg, #fbeecb 0%, #C9F0D1 50%, #c7b8e7 100%);
+    background-image: url(https://wallpapercave.com/wp/wp3945721.png);
+}
+
+img {
+    width: 50vw;
+    animation: bounce 1s infinite;
+  }
+  
+#chat {
+    animation: bounce 2s infinite;
+}
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }

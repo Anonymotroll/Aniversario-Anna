@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <title>ヾ⁠(⁠･⁠ω⁠･⁠⁠)⁠ﾉ</title>
+</head>
+<body>
+
+    <img src="./assets/puppycat.png" alt="" srcset="">
+    <audio autoplay loop>
+      <source src="./assets/PuppyCat Comes Home (Reprise).mp3">
+      Your browser does not support the audio tag.
+    </audio>
+    <script>
+      const img = document.querySelector("img");
+      let sounds = ["./assets/audio1.mp3", "./assets/audio2.mp3"];
+      let chatBalloon = null;
+      let texts = ["Olá Anninha!",
+      "Feliz aniversário pra você!", 
+      "Como está sendo seu dia hoje? Está gostando?",
+      "O Vitor preparou algo muito legal pra você hoje!",
+      "Espero que você goste :3"];
+      let currentIndex = 0;
+
+      document.body.addEventListener("click", () => {
+        if (!chatBalloon) {
+          // Create the chat balloon on first click
+          chatBalloon = document.createElement("div");
+          chatBalloon.id = "chat"
+          chatBalloon.style.fontFamily = "Nerko One, Segoe UI, Sans-Serifi"
+          chatBalloon.style.fontSize = "30px";
+          chatBalloon.style.textAlign = "center";
+          chatBalloon.style.position = "absolute";
+          chatBalloon.style.top = "85%";
+          chatBalloon.style.left = "center";
+          chatBalloon.style.background = "white";
+          chatBalloon.style.padding = "25px 55px";
+          chatBalloon.style.borderRadius = "10px";
+          chatBalloon.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+          document.body.appendChild(chatBalloon);
+        }
+
+        // Update the text in the chat balloon on each click
+        chatBalloon.innerText = texts[currentIndex];
+        currentIndex = (currentIndex + 1) % texts.length;
+
+        // Play a random audio from the sounds array
+      const randomSounds = Math.floor(Math.random() * sounds.length);
+      const audio = new Audio(sounds[randomSounds]);
+      audio.play();
+
+      // Update the image based on the current text
+    if (texts[currentIndex] === "Espero que você goste :3") {
+      img.src = "./assets/dancing-puppycat.gif"; // Replace with the desired image URL
+    } else if (texts[currentIndex] === "Olá Anninha!") {
+      img.src = "./assets/smack-puppycat.gif"; // Replace with the desired image URL
+    } else {
+      img.src = "./assets/puppycat.png"; // Replace with the default image URL
+    }
+      });
+    </script>
+
+</body>
+</html>
