@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <title>♡︎ ♡︎ ♡︎</title>
+</head>
+<body>
+    <img id="end" src="https://media.tenor.com/coDx33FiaqAAAAAi/sleeping-puppycat.gif" alt="" srcset="">
+    <audio autoplay loop>
+        <source src="./assets/PuppyCat Lullaby _ Space Lullaby _ Bee and PuppyCat (Soundtrack from the Netflix Series) Vol. 1.mp3">
+        Your browser does not support the audio tag.
+      </audio>
+
+      <script>
+        const img = document.querySelector("img");
+        let sounds = ["./assets/audio1.mp3", "./assets/audio2.mp3", "./assets/audio3.mp3"];
+        let chatBalloon = null;
+        let texts = ["Oi, minha bonequinha", 
+        "Espero que tenha gostado dessa brincadeirinha... Ela me fez rir bastante da voz do Puppycat KKKK",
+        "Você é amada e muito querida por mim",
+        "Você é a mulher que sempre sonhei",
+        "Meus maiores desejos são para que você consiga tudo o que almeja!", 
+        "Que você continue sendo essa pessoa super especial, carinhosa, amorosa e doce que você é",
+        "Serei para sempre seu. E que esse segundo aniversário que passamos juntos sejam apenas o começo de uma grande jornada!",
+        "Te amo igual o Puppycat ama a série do Patricinha",
+        "Só não pode chorar :p",
+        "Te amo!",
+        ""];
+        let currentIndex = 0;
+  
+        document.body.addEventListener("click", () => {
+          if (!chatBalloon) {
+            // Create the chat balloon on first click
+            chatBalloon = document.createElement("div");
+            chatBalloon.id = "chat"
+            chatBalloon.style.fontFamily = "Nerko One, Segoe UI, Sans-Serifi"
+            chatBalloon.style.fontSize = "30px";
+            chatBalloon.style.textAlign = "center";
+            chatBalloon.style.position = "absolute";
+            chatBalloon.style.top = "85%";
+            chatBalloon.style.left = "center";
+            chatBalloon.style.background = "white";
+            chatBalloon.style.padding = "25px 55px";
+            chatBalloon.style.borderRadius = "10px";
+            chatBalloon.style.maxWidth = "600px"
+            chatBalloon.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+            document.body.appendChild(chatBalloon);
+          }
+  
+          // Update the text in the chat balloon on each click
+          chatBalloon.innerText = texts[currentIndex];
+          currentIndex = (currentIndex + 1) % texts.length;
+  
+          // Check if we've reached the end of the texts array
+        if (currentIndex === 0 && texts.length === 11) {
+          // Redirect to another HTML page
+          document.body.removeChild(chatBalloon);
+        }
+        });   
+      </script>
+</body>
+</html>

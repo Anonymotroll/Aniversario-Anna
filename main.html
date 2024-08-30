@@ -18,12 +18,17 @@
     </audio>
     <script>
       const img = document.querySelector("img");
-      let sounds = ["./assets/audio1.mp3", "./assets/audio2.mp3"];
+      let sounds = ["./assets/audio1.mp3", "./assets/audio2.mp3", "./assets/audio3.mp3"];
       let chatBalloon = null;
-      let texts = ["Olá Anninha!",
-      "Feliz aniversário pra você!", 
+      let texts = ["Olá Anna!", 
       "Como está sendo seu dia hoje? Está gostando?",
-      "O Vitor preparou algo muito legal pra você hoje!",
+      "Fiquei sabendo que você gosta muito de mim e da Bee...",
+      "Por isso, vim aqui te dar meus parabéns e desejar muita felicidade!",
+      "Sei que você queria muito mais uma temporada minha e da Bee...", 
+      "E o Vitor ficou tão sentido vendo você chorar daquele jeito... (É um peidão, ele)",
+      "Que fez eu e a Bee virmos te dar os parábens",
+      "Agora, se prepare",
+      "Pois ele preparou algo muito legal pra você hoje!",
       "Espero que você goste :3"];
       let currentIndex = 0;
 
@@ -41,6 +46,7 @@
           chatBalloon.style.background = "white";
           chatBalloon.style.padding = "25px 55px";
           chatBalloon.style.borderRadius = "10px";
+          chatBalloon.style.maxWidth = "600px"
           chatBalloon.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
           document.body.appendChild(chatBalloon);
         }
@@ -49,6 +55,12 @@
         chatBalloon.innerText = texts[currentIndex];
         currentIndex = (currentIndex + 1) % texts.length;
 
+        // Check if we've reached the end of the texts array
+      if (currentIndex === 0 && texts.length === 10) {
+        // Redirect to another HTML page
+        window.location.href = "./end.html";
+      }
+
         // Play a random audio from the sounds array
       const randomSounds = Math.floor(Math.random() * sounds.length);
       const audio = new Audio(sounds[randomSounds]);
@@ -56,13 +68,36 @@
 
       // Update the image based on the current text
     if (texts[currentIndex] === "Espero que você goste :3") {
-      img.src = "./assets/dancing-puppycat.gif"; // Replace with the desired image URL
-    } else if (texts[currentIndex] === "Olá Anninha!") {
+      img.src = "https://media.tenor.com/FYb_ZgagxGUAAAAi/dancing-puppycat.gif"; // Replace with the desired image URL
+    } else if (texts[currentIndex] === "Olá Anna!") {
       img.src = "./assets/smack-puppycat.gif"; // Replace with the desired image URL
+    }  else if (texts[currentIndex] === "Por isso, vim aqui te dar meus parabéns e desejar muita felicidade!") {
+      img.src = "https://media.tenor.com/5UxzgBQ49gcAAAAi/twinkling-eyes-puppycat.gif";
+    }  else if (texts[currentIndex] === "E o Vitor ficou tão sentido vendo você chorar daquele jeito... (É um peidão, ele)") {
+      img.src = "https://media.tenor.com/iycQ4y2wU4sAAAAi/tired-puppycat.gif";
     } else {
       img.src = "./assets/puppycat.png"; // Replace with the default image URL
     }
-      });
+    if (texts[currentIndex] === "Agora, se prepare") {
+      Bee = document.createElement("img");
+      Bee.src = "https://media.tenor.com/dsK60NkVI7gAAAAj/wave-bee.gif";
+      Bee.style.position = "absolute";
+      Bee.style.width = "20%";
+      Bee.style.top = "75vh";
+      Bee.style.left = "77vw";
+      Bee.style.transform = "translate(-50%, 0)";
+      document.body.appendChild(Bee);
+    }
+    let clickCount = 0;
+const observer = new MutationObserver(() => {
+  clickCount++;
+  if (clickCount >= 8 && Bee) {
+    document.body.removeChild(Bee);
+    Bee = null;
+  }
+});
+observer.observe(img, { attributes: true });
+      });   
     </script>
 
 </body>

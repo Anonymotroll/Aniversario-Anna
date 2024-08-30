@@ -5,6 +5,8 @@ body {
     height: 100vh;
     background: linear-gradient(60deg, #fbeecb 0%, #C9F0D1 50%, #c7b8e7 100%);
     background-image: url(https://wallpapercave.com/wp/wp3945721.png);
+    background-size: cover;
+    
 }
 
 img {
@@ -22,5 +24,46 @@ img {
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  #end {
+    width: 50vw;
+    animation: bounce 1s infinite, float 20s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    10% {
+      transform: translateX(10vw) translateY(-10vh);
+    }
+    20% {
+      transform: translateX(15vw) translateY(5vh);
+    }
+    30% {
+      transform: translateX(-5vw) translateY(-5vh);
+    }
+    40% {
+      transform: translateX(5vw) translateY(10vh);
+    }
+    50% {
+      transform: translateX(-10vw) translateY(10vh);
+    }
+    60% {
+      transform: translateX(10vw) translateY(-5vh);
+    }
+    70% {
+      transform: translateX(5vw) translateY(5vh);
+    }
+    80% {
+      transform: translateX(-5vw) translateY(-10vh);
+    }
+    90% {
+      transform: translateX(10vw) translateY(5vh);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
     }
   }
