@@ -13,12 +13,10 @@ body {
 }
 
 button{
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 700;
-    color: #9d6866;
+    font-size: 20px;
     position: absolute;
     top: 70%;
-    background-color: #f1a6b9;
+    background-color: #ffb9cb;
     padding: 15px 20px;
     border-radius: 15px;
     border: 1px solid #f198ae;
@@ -26,8 +24,20 @@ button{
 }
 
 a {
+    font-family: "Nerko One", "Segoe UI", sans-serif;
     text-decoration: none;
-    color: #9d6866;
+    color: #643b3a;
+}
+
+p {
+    font-family: "Nerko One", "Segoe UI", sans-serif;
+    color: #643b3a;
+    position: absolute;
+    top: 82%;
+    background-color: #ffb9cb;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid #f198ae;
 }
 
 button:hover {

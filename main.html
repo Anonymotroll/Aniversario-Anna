@@ -29,7 +29,8 @@
       "Que fez eu e a Bee virmos te dar os parábens",
       "Agora, se prepare",
       "Pois ele preparou algo muito legal pra você hoje!",
-      "Espero que você goste :3"];
+      "Espero que você goste :3",
+      ""];
       let currentIndex = 0;
 
       document.body.addEventListener("click", () => {
@@ -56,7 +57,7 @@
         currentIndex = (currentIndex + 1) % texts.length;
 
         // Check if we've reached the end of the texts array
-      if (currentIndex === 0 && texts.length === 10) {
+      if (currentIndex === 0 && texts.length === 11) {
         // Redirect to another HTML page
         window.location.href = "./end.html";
       }
@@ -69,7 +70,7 @@
       // Update the image based on the current text
     if (texts[currentIndex] === "Espero que você goste :3") {
       img.src = "https://media.tenor.com/FYb_ZgagxGUAAAAi/dancing-puppycat.gif"; // Replace with the desired image URL
-    } else if (texts[currentIndex] === "Olá Anna!") {
+    } else if (texts[currentIndex] === "") {
       img.src = "./assets/smack-puppycat.gif"; // Replace with the desired image URL
     }  else if (texts[currentIndex] === "Por isso, vim aqui te dar meus parabéns e desejar muita felicidade!") {
       img.src = "https://media.tenor.com/5UxzgBQ49gcAAAAi/twinkling-eyes-puppycat.gif";
